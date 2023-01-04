@@ -2,17 +2,18 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Application/bin/Debug/net6.0
+/Application/bin
 /Application/obj
-/Data/bin/Debug/net6.0
+/Data/bin
 /Data/obj
-/Domain/bin/Debug/net6.0
+/Domain/bin
 /Domain/obj
-/Infra/bin/Debug/net6.0
+/Infra/bin
 /Infra/obj
-/Test/bin/Debug/net6.0
+/Test/bin
 /Test/obj
 /Worker/obj
-/Worker/bin/Debug/net6.0
+/Worker/bin
 /.vs
-/API/obj/Debug/net6.0
+/API/obj
+/API/bin

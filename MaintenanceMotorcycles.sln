@@ -3,17 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{790E4119-15EC-4B8C-A493-94ADC76DD650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{790E4119-15EC-4B8C-A493-94ADC76DD650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{FEED673C-40F7-4E29-943B-4623D524F93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{FEED673C-40F7-4E29-943B-4623D524F93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F7E42269-0FA7-4546-9203-EFB0C85127BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{F7E42269-0FA7-4546-9203-EFB0C85127BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{B4C54576-EA15-485C-B5F9-196664B493B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj", "{B4C54576-EA15-485C-B5F9-196664B493B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job", "Worker\Job.csproj", "{ECAA2E66-719D-4D58-B457-6C8CC0236393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Job", "Worker\Job.csproj", "{ECAA2E66-719D-4D58-B457-6C8CC0236393}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{9D557CCC-64F4-4515-85AE-180C6615A659}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{9D557CCC-64F4-4515-85AE-180C6615A659}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{173153A9-DBCB-451C-BF1D-72E210BC25B3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{67CA1A1B-3521-468F-91C4-E16148E297FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +52,10 @@ Global
 		{9D557CCC-64F4-4515-85AE-180C6615A659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D557CCC-64F4-4515-85AE-180C6615A659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D557CCC-64F4-4515-85AE-180C6615A659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CA1A1B-3521-468F-91C4-E16148E297FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CA1A1B-3521-468F-91C4-E16148E297FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CA1A1B-3521-468F-91C4-E16148E297FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CA1A1B-3521-468F-91C4-E16148E297FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
