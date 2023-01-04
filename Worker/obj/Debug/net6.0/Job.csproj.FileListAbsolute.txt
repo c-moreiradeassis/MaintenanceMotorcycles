@@ -1,0 +1,5 @@
+C:\Users\cmore\Documents\Projetos\MaintenanceMotorcycles\Worker\obj\Debug\net6.0\Job.csproj.AssemblyReference.cache
+C:\Users\cmore\Documents\Projetos\MaintenanceMotorcycles\Worker\obj\Debug\net6.0\Job.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmore\Documents\Projetos\MaintenanceMotorcycles\Worker\obj\Debug\net6.0\Job.AssemblyInfoInputs.cache
+C:\Users\cmore\Documents\Projetos\MaintenanceMotorcycles\Worker\obj\Debug\net6.0\Job.AssemblyInfo.cs
+C:\Users\cmore\Documents\Projetos\MaintenanceMotorcycles\Worker\obj\Debug\net6.0\Job.csproj.CoreCompileInputs.cache
