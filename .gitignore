@@ -3,7 +3,7 @@
 ################################################################################
 
 /Application/bin
-/Application/obj/Debug
+/Application/obj
 /Data/bin
 /Data/obj
 /Domain/bin
