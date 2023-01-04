@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
@@ -6,9 +7,12 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class MaintenanceController : ControllerBase
     {
-        public void Index()
+        [HttpPost]
+        public async Task<IActionResult> AddMaintenance(MaintenanceImp maintenance)
         {
 
+
+            return Ok();
         }
     }
 }

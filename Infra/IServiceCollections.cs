@@ -1,10 +1,12 @@
 ﻿using Application.Interface;
 using Application.Service;
 using Data.Repository.Dapper;
+using Data.Repository.Entity;
 using Domain.Configuration;
 using Domain.Interface;
 using Domain.Models;
 using Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -55,9 +57,18 @@ namespace Infra
         {
             var connection = GetDbConnectionString(configuration);
 
-            // todo: verificar essa linha
-            services.AddSingleton((Func<IServiceProvider, Domain.Repository.MaintenanceRepository>)(r => new Data.Repository.Dapper.MaintenanceRepositoryImp(connection)))
+            services.AddSingleton<MaintenanceRepository>(r => new Data.Repository.Dapper.MaintenanceRepositoryImp(connection))
                     .AddSingleton<EmailRepository>(r => new EmailRepositoryImp(connection));
+
+            return services;
+        }
+
+        public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString(CONNECTION_STRING));
+            });
 
             return services;
         }

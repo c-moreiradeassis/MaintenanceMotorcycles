@@ -2,6 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/.vs
+/API/obj
+/API/bin
 /Application/bin
 /Application/obj
 /Data/bin
@@ -10,10 +13,7 @@
 /Domain/obj
 /Infra/bin
 /Infra/obj
+/Job/obj
+/Job/bin
 /Test/bin
 /Test/obj
-/Worker/obj
-/Worker/bin
-/.vs
-/API/obj
-/API/bin
