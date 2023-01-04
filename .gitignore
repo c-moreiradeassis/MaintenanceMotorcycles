@@ -3,7 +3,7 @@
 ################################################################################
 
 /Application/bin
-/Application/obj/Debug/net6.0
+/Application/obj/Debug
 /Data/bin
 /Data/obj
 /Domain/bin
@@ -17,4 +17,3 @@
 /.vs
 /API/obj
 /API/bin
-/Application/obj/Debug/net6.0/Application.csproj.AssemblyReference.cache
