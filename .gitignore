@@ -2,16 +2,17 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/MaintenanceMotorcycles/.vs
-/MaintenanceMotorcycles/Application/bin/Debug/net6.0
-/MaintenanceMotorcycles/Application/obj
-/MaintenanceMotorcycles/Data/bin/Debug/net6.0
-/MaintenanceMotorcycles/Data/obj
-/MaintenanceMotorcycles/Domain/bin/Debug/net6.0
-/MaintenanceMotorcycles/Domain/obj
-/MaintenanceMotorcycles/Infra/bin/Debug/net6.0
-/MaintenanceMotorcycles/Infra/obj
-/MaintenanceMotorcycles/Test/bin/Debug/net6.0
-/MaintenanceMotorcycles/Test/obj
-/MaintenanceMotorcycles/Worker/obj
-/MaintenanceMotorcycles/Worker/bin/Debug/net6.0
+/Application/bin/Debug/net6.0
+/Application/obj
+/Data/bin/Debug/net6.0
+/Data/obj
+/Domain/bin/Debug/net6.0
+/Domain/obj
+/Infra/bin/Debug/net6.0
+/Infra/obj
+/Test/bin/Debug/net6.0
+/Test/obj
+/Worker/obj
+/Worker/bin/Debug/net6.0
+/.vs
+/API/obj/Debug/net6.0
