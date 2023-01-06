@@ -11,9 +11,14 @@ namespace Data.Repository.Entity
             _context = context;
         }
 
-        public void AddMaintenance<T>(T entity) where T : class
+        public void Add<T>(T entity) where T : class
         {
-            _context.Maintenance.Add(entity);
+            _context.Add(entity);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

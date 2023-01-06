@@ -2,7 +2,7 @@
 
 namespace Domain.Models
 {
-    public class MaintenanceImp : Maintenance
+    public class MaintenanceImp : BaseEntity, Maintenance
     {
         public string? Email { get; set; }
         public string? Item { get; set; }

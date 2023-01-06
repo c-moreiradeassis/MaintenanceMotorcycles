@@ -2,6 +2,7 @@
 {
     public interface BaseContext
     {
-        void AddMaintenance<T>(T entity) where T : class;
+        void Add<T>(T entity) where T : class;
+        Task SaveChangesAsync();
     }
 }
