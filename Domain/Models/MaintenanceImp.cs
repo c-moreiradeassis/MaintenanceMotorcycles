@@ -8,6 +8,7 @@ namespace Domain.Models
         public string? Item { get; set; }
         public string? Operation { get; set; }
         public DateTime LastMaintenance { get; set; }
+        public int Every { get; set; }
 
         public DateTime GetNextMaintenanceDate(int daysToAddDate)
         {

@@ -1,10 +1,12 @@
 ﻿using Application.Interface;
 using Application.Service;
 using Data.Repository.Dapper;
+using Data.Repository.Entity;
 using Domain.Configuration;
 using Domain.Interface;
 using Domain.Models;
 using Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,12 +16,23 @@ namespace Infra
     {
         private const string CONNECTION_STRING = "DefaultConnection";
 
-        public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddServicesAPI(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDomain()
+                    .AddApplication()
+                    .AddDapperRepository(configuration)
+                    .AddDbContext(configuration);
+
+            return services;
+        }
+
+        public static IServiceCollection AddServicesJob(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddParameters(configuration)
                     .AddDomain()
                     .AddApplication()
-                    .AddDapperRepository(configuration);
+                    .AddDapperRepository(configuration)
+                    .AddDbContext(configuration);
 
             return services;
         }
@@ -37,16 +50,16 @@ namespace Infra
 
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddSingleton<EmailService, EmailServiceImp>();
-            services.AddSingleton<MaintenanceService, MaintenanceServiceImp>();
+            services.AddScoped<EmailService, EmailServiceImp>();
+            services.AddScoped<MaintenanceService, MaintenanceServiceImp>();
 
             return services;
         }
 
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
-            services.AddSingleton<Email, EmailImp>();
-            services.AddSingleton<Maintenance, MaintenanceImp>();
+            services.AddScoped<Email, EmailImp>();
+            services.AddScoped<Maintenance, MaintenanceImp>();
 
             return services;
         }
@@ -55,9 +68,22 @@ namespace Infra
         {
             var connection = GetDbConnectionString(configuration);
 
-            // todo: verificar essa linha
-            services.AddSingleton((Func<IServiceProvider, Domain.Repository.MaintenanceRepository>)(r => new Data.Repository.Dapper.MaintenanceRepositoryImp(connection)))
-                    .AddSingleton<EmailRepository>(r => new EmailRepositoryImp(connection));
+            services.AddScoped<MaintenanceRepository>(r => new MaintenanceRepositoryImp(connection))
+                    .AddScoped<EmailRepository>(r => new EmailRepositoryImp(connection));
+
+            return services;
+        }
+
+        public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            var connection = GetDbConnectionString(configuration);
+
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(connection);
+            });
+
+            services.AddScoped<BaseContext, BaseContextImp>();
 
             return services;
         }
