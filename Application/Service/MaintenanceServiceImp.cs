@@ -1,6 +1,5 @@
 ﻿using Application.Interface;
 using Domain.Interface;
-using Domain.Models;
 using Domain.Repository;
 
 namespace Application.Service
@@ -17,7 +16,7 @@ namespace Application.Service
             _context = context;
         }
 
-        public async Task AddMaintenance(MaintenanceImp maintenanceImp)
+        public async Task AddMaintenance(Data.Repository.Entity.Context.Maintenance maintenanceImp)
         {
             _context.Add(maintenanceImp);
 

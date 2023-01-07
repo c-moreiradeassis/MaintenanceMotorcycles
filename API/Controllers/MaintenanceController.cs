@@ -1,5 +1,5 @@
 ﻿using Application.Interface;
-using Domain.Models;
+using Data.Repository.Entity.Context;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -16,11 +16,11 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MaintenanceImp))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Maintenance))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddMaintenance(MaintenanceImp maintenanceImp)
+        public async Task<IActionResult> AddMaintenance(Maintenance maintenance)
         {
-            await _maintenanceService.AddMaintenance(maintenanceImp);
+            await _maintenanceService.AddMaintenance(maintenance);
 
             return Ok();
         }
